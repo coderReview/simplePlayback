@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>E350B740-E6A4-422C-AD1E-6674253C6128</string>
+	<key>IDESourceControlProjectName</key>
+	<string>SimplePlayback</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>07EE3A14-C858-4AF5-BCCB-B2C3CD906BD8</key>
+		<string>git://git.videolan.org/vlc-bindings/VLCKit.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Examples_iOS/SimplePlayback/SimplePlayback.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>07EE3A14-C858-4AF5-BCCB-B2C3CD906BD8</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>git://git.videolan.org/vlc-bindings/VLCKit.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>07EE3A14-C858-4AF5-BCCB-B2C3CD906BD8</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>07EE3A14-C858-4AF5-BCCB-B2C3CD906BD8</string>
+			<key>IDESourceControlWCCName</key>
+			<string>VLCKit</string>
+		</dict>
+	</array>
+</dict>
+</plist>
