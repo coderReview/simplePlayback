@@ -40,23 +40,29 @@
     [super viewDidLoad];
 
     /* setup the media player instance, give it a delegate and something to draw into */
-    _mediaplayerTop = [[VLCMediaPlayer alloc] initWithOptions:@[@"--ipv4-timeout=30000",
-                                                               @"--verbose=4",
+    _mediaplayerTop = [[VLCMediaPlayer alloc] initWithOptions:@[@"--ipv4-timeout=10000",
+                                                               @"--verbose=1",
                                                                @"--stats",
                                                                @"--rtsp-tcp"]];
     _mediaplayerTop.delegate = self;
     _mediaplayerTop.drawable = self.movieViewTop;
+    
+    self.movieViewTop.layer.borderColor = [UIColor redColor].CGColor;
+    self.movieViewTop.layer.borderWidth = 1.0f;
 
     /* create a media object and give it to the player */
     _mediaplayerTop.media = [VLCMedia mediaWithURL:[NSURL URLWithString:@"rtsp://wowzaec2demo.streamlock.net/vod/mp4:BigBuckBunny_115k.mov"]];
     
     /* setup the media player instance, give it a delegate and something to draw into */
-   _mediaplayerBottom = [[VLCMediaPlayer alloc] initWithOptions:@[@"--ipv4-timeout=30000",
-                                                                 @"--verbose=4",
+   _mediaplayerBottom = [[VLCMediaPlayer alloc] initWithOptions:@[@"--ipv4-timeout=10000",
+                                                                 @"--verbose=1",
                                                                  @"--stats",
                                                                  @"--rtsp-tcp"]];
     _mediaplayerBottom.delegate = self;
     _mediaplayerBottom.drawable = self.movieViewBottom;
+    
+    self.movieViewBottom.layer.borderColor = [UIColor redColor].CGColor;
+    self.movieViewBottom.layer.borderWidth = 1.0f;
     
     /* create a media object and give it to the player */
     _mediaplayerBottom.media = [VLCMedia mediaWithURL:[NSURL URLWithString:@"rtsp://wowzaec2demo.streamlock.net/vod/mp4:BigBuckBunny_115k.mov"]];
