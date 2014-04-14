@@ -41,8 +41,7 @@
 
     /* setup the media player instance, give it a delegate and something to draw into */
     _mediaplayerTop = [[VLCMediaPlayer alloc] initWithOptions:@[@"--ipv4-timeout=10000",
-                                                               @"--verbose=1",
-                                                               @"--stats",
+                                                               @"--verbose=0",
                                                                @"--rtsp-tcp"]];
     _mediaplayerTop.delegate = self;
     _mediaplayerTop.drawable = self.movieViewTop;
@@ -55,8 +54,7 @@
     
     /* setup the media player instance, give it a delegate and something to draw into */
    _mediaplayerBottom = [[VLCMediaPlayer alloc] initWithOptions:@[@"--ipv4-timeout=10000",
-                                                                 @"--verbose=1",
-                                                                 @"--stats",
+                                                                 @"--verbose=0",
                                                                  @"--rtsp-tcp"]];
     _mediaplayerBottom.delegate = self;
     _mediaplayerBottom.drawable = self.movieViewBottom;
@@ -85,12 +83,38 @@
         [_mediaplayerTop pause];
     
     [_mediaplayerTop play];
-    [NSThread sleepForTimeInterval:10];
+    
+    [NSThread sleepForTimeInterval:3];
+    
     if (_mediaplayerBottom.isPlaying)
         [_mediaplayerBottom pause];
     
     [_mediaplayerBottom play];
     
+}
+
+-(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
+    UIView *viewBottom = [[_mediaplayerBottom.drawable subviews] lastObject];
+    if (viewBottom) {
+        NSLog(@"- %@\n%@", _mediaplayerBottom.drawable, [_mediaplayerBottom .drawable layer]);
+        NSLog(@"- %@\n%@", viewBottom, [viewBottom layer]);
+        
+        [viewBottom.layer setAffineTransform:CGAffineTransformIdentity];
+        viewBottom.layer.borderColor = [UIColor blueColor].CGColor;
+        viewBottom.layer.borderWidth = 3.0f;
+    }
+    
+    UIView *viewTop = [[_mediaplayerTop.drawable subviews] lastObject];
+    if (viewTop) {
+        NSLog(@"- %@\n%@", _mediaplayerTop.drawable, [_mediaplayerTop .drawable layer]);
+        NSLog(@"- %@\n%@", viewTop, [viewTop layer]);
+        
+        [viewTop.layer setAffineTransform:CGAffineTransformIdentity];
+        viewTop.layer.borderColor = [UIColor blueColor].CGColor;
+        viewTop.layer.borderWidth = 3.0f;
+    }
+    
+    return;
 }
 
 @end
