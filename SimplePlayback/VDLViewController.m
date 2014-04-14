@@ -70,21 +70,27 @@
 
 - (IBAction)playandPause:(id)sender
 {
-    if (_mediaplayerTop.isPlaying)
-        [_mediaplayerTop pause];
-
-    [_mediaplayerTop play];
-    
-    if (_mediaplayerBottom.isPlaying)
-        [_mediaplayerBottom pause];
-    
-    [_mediaplayerBottom play];
+    [self performSelectorInBackground:@selector(startVideos) withObject:nil];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)startVideos {
+    
+    if (_mediaplayerTop.isPlaying)
+        [_mediaplayerTop pause];
+    
+    [_mediaplayerTop play];
+    [NSThread sleepForTimeInterval:10];
+    if (_mediaplayerBottom.isPlaying)
+        [_mediaplayerBottom pause];
+    
+    [_mediaplayerBottom play];
+    
 }
 
 @end
